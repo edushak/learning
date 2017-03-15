@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class TextAnalyzerTest {
     String testFileName = "text.txt";
@@ -91,5 +92,12 @@ public class TextAnalyzerTest {
             put("lines", 5);
         }};
         assertEquals(analyzer.getStats(), expectedStats);
+    }
+
+    @Test
+    public void testToString() throws Exception {
+        String actual = analyzer.toString();
+        assertTrue(actual.startsWith("TextAnalyzer { path="));
+        assertTrue(actual.endsWith("learning\\build\\resources\\test\\text.txt}"));
     }
 }
