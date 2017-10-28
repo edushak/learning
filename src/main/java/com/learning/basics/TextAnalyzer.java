@@ -3,21 +3,43 @@ package com.learning.basics;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.ByteBuffer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
-public class TextAnalyzer {
+public class TextAnalyzer implements ITextAnalyzer {
     private final File file;
     private final Path path;
 
-    public TextAnalyzer(String filePath) throws FileNotFoundException {
+    private static Map<String, TextAnalyzer> files = new HashMap<>();
+
+    private TextAnalyzer(String filePath) throws FileNotFoundException {
         this.file = new File(filePath);
         if (!file.exists()) {
             throw new FileNotFoundException("Invalid file path: " + filePath);
         }
         this.path = file.toPath();
+    }
+
+    /**
+     * Factory method;
+     * @param filePath
+     * @return
+     * @throws FileNotFoundException
+     */
+    static ITextAnalyzer newInstance(String filePath) throws FileNotFoundException {
+        if (!files.containsKey(filePath)) {
+            files.put(filePath, new TextAnalyzer(filePath));
+        }
+        return files.get(filePath);
+    }
+
+    static TextAnalyzer newInstance(String filePath, String encoding) throws FileNotFoundException {
+        if ("UTF-8".equals(encoding)) {
+            return new TextAnalyzer(filePath);
+        } else {
+            return files.get(filePath);
+        }
     }
 
     public Map getStats() throws IOException {
@@ -34,7 +56,6 @@ public class TextAnalyzer {
     public int getLinesCounter() throws IOException {
         return getLines().size();
     }
-
 
     public List<String> getWords() throws IOException {
         List<String> words = Arrays.asList(getText().trim().split("\\s+"));

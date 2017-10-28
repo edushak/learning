@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -20,19 +21,20 @@ public class TextAnalyzerTest {
         "test file" + System.lineSeparator() +
         "of no significance." + System.lineSeparator() +
         "" + System.lineSeparator();
-    TextAnalyzer analyzer;
+    ITextAnalyzer analyzer;
 
     @BeforeClass // runs once per TextAnalyzerTest
     public void setUp() throws Exception {
         ClassLoader classLoader = TextAnalyzerTest.class.getClassLoader();
-        String pathname = classLoader.getResource(testFileName).getFile();
-        analyzer = new TextAnalyzer(pathname);
+        URL resource = classLoader.getResource(testFileName);
+        String pathname = resource.getFile();
+        analyzer = TextAnalyzer.newInstance(pathname);
     }
 
     @Test(expectedExceptions = FileNotFoundException.class,
           expectedExceptionsMessageRegExp = "Invalid file path: C://non-existent-file.txt")
     public void testInvalidParameter() throws Exception {
-        new TextAnalyzer("C://non-existent-file.txt");
+        TextAnalyzer.newInstance("C://non-existent-file.txt");
     }
 
     @Test
