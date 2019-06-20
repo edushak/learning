@@ -1,6 +1,5 @@
 package com.learning.basics;
 
-
 public class Calculator {
 
     private Calculator() {
@@ -16,4 +15,3 @@ public class Calculator {
         return a + b;
     }
 }
-
