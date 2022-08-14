@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class RoomSpec extends Specification {
 
-    def "Name"() {
+    def "area and volume of the room"() {
         when:
         def room1 = new Room("Yellow", 6.2, 4.5, 2.8, 2, 3)
 
@@ -13,3 +13,4 @@ class RoomSpec extends Specification {
         assert room1.getVolume() == 78.120
     }
 }
+
