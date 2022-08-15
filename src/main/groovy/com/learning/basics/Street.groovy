@@ -2,35 +2,30 @@ package com.learning.basics
 
 class Street {
     String name
-    int numberOfHouses
+    List<House> houses
     int width
     int length
-    int numberOfParkingSpaces
-    String mainBuildings
+    // int numberOfParkingSpaces // FIXME: move to House
+    String details
 
-    Street(String name, int numberOfHouses, int width, int length, int numberOfParkingSpaces, String mainBuildings) {
+    Street(String name, List<House> houses, int width, int length, String details) {
         this.name = name
-        this.numberOfHouses = numberOfHouses
+        this.houses = houses
         this.width = width
         this.length = length
-        this.numberOfParkingSpaces = numberOfParkingSpaces
-        this.mainBuildings = mainBuildings
+        this.details = details
     }
 
     int getNumberOfHouses() {
-        return numberOfHouses
+        return houses.size()
     }
 
     int getWidth() {
         return width
     }
 
-    int getNumberOfParkingSpaces() {
-        return numberOfParkingSpaces
-    }
-
-    String getMainBuildings() {
-        return mainBuildings
+    String getDetails() {
+        return details
     }
 
     BigDecimal getArea() {

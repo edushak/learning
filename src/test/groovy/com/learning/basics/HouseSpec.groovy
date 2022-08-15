@@ -3,12 +3,11 @@ package com.learning.basics
 import spock.lang.Specification
 
 class HouseSpec extends Specification {
+
     def "HouseArea"() {
         when:
-        def house1 = new House(
-                5, 2, "bricks", "pink", "wood", "black", 20, 30, 9)
-
+        def house1 = new House("540 Codding Road", 8, 3, null, "30 years tar", "Black", 18, 16, 20)
         then:
-        assert house1.getArea() == 600
+        assert house1.getArea() == 288
     }
 }

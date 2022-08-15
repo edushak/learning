@@ -6,9 +6,8 @@ public class StreetSpec extends Specification {
 
     def "Name" () {
         when:
-        def Street1 = new Street(30, 15, 190, 80, "School")
-
+        def street1 = new Street("New Road", [], 2, 900, "newly built road")
         then:
-        assert Street1.getArea() == 2850
+        assert street1.getArea() == 1800
     }
 }
