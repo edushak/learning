@@ -4,8 +4,13 @@ import groovy.transform.Canonical
 
 @Canonical
 class Window {
+    // enumerator
+    enum Material {
+        Plastic, Wood, Metal
+    }
+
     BigDecimal width, height
-    String material // TODO: change to fixed: Plastic, Wood, Metal
+    Material material
     String color
 
     BigDecimal getWindowArea() {

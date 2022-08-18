@@ -1,5 +1,8 @@
 package com.learning.basics
 
+/**
+ * Developer: Oleh
+ */
 class Room {
 
     // Application starting point
@@ -58,6 +61,14 @@ class Room {
     }
     int getNumberOfClosets() {
         return numberOfClosets
+    }
+
+    List<Window> findWindows(Window.Material material) {
+        // TODO implement
+    }
+
+    Map<Window.Material, List<Window>> getWindowsByMaterial() {
+        // TODO for Ed
     }
 
     @Override

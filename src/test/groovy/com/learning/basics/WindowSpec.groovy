@@ -5,7 +5,7 @@ import spock.lang.Specification
 class WindowSpec extends Specification {
     def "GetWindowArea"() {
         when:
-        def window = new Window(36, 48, 'PVC', 'White')
+        def window = new Window(36, 48, Window.Material.Plastic)
         then:
         window.getWindowArea() == 1728
     }

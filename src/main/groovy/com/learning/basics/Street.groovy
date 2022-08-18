@@ -1,11 +1,14 @@
 package com.learning.basics
 
+/**
+ * Developer: Anna
+ */
 class Street {
     String name
     List<House> houses
     int width
     int length
-    // int numberOfParkingSpaces // FIXME: move to House
+    // int numberOfParkingSpaces // TODO: move to House
     String details
 
     Street(String name, List<House> houses, int width, int length, String details) {
@@ -30,5 +33,10 @@ class Street {
 
     BigDecimal getArea() {
         return width * length
+    }
+
+    // TODO: implement
+    List<House> findHousesInStatus(String status) {
+        throw new Exception("Not implemented yet!")
     }
 }

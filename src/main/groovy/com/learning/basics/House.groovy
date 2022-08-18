@@ -1,9 +1,16 @@
 package com.learning.basics
 
+/**
+ * Developer: Maria
+ */
 class House {
-    String address
+    // TODO: add enum Material, like we have for Window
+    String status = 'livable not on sale';
+
     int NumberOfRooms
     int NumberOfFloors
+
+    String address
     String WallsMaterial
     String RoofMaterial
     String RoofColor
@@ -13,16 +20,8 @@ class House {
     BigDecimal soldPrice
     BigDecimal todayEstimatedPrice
 
-    /*
-    {
-        def house1 = new House(5,2,"brick","pink","wood","black",20,30,9)
-        def house2 = new House(10,3,"blocks","white","wood","brown",45,45,13)
-        def house3 = new House(7,1,"wood","brown","wood","white",34,16,10)
-    }
-    */
-
-    // TODO: move to Room class - String WallsColor
-    House(String address, int NumberOfRooms, int NumberOfFloors, String WallsMaterial, String RoofMaterial, String RoofColor, BigDecimal length, BigDecimal width, BigDecimal height) {
+    House(String address, int NumberOfRooms, int NumberOfFloors, String WallsMaterial, String RoofMaterial,
+          String RoofColor, BigDecimal length, BigDecimal width, BigDecimal height, String status = null) {
         this.address = address
         this.NumberOfRooms = NumberOfRooms
         this.NumberOfFloors = NumberOfFloors
@@ -32,6 +31,7 @@ class House {
         this.length = length
         this.width = width
         this.height = height
+        this.status = status
     }
 
     int getNumberOfRooms() {
@@ -46,7 +46,6 @@ class House {
         return WallsMaterial
     }
 
-
     String getRoofMaterial() {
         return RoofMaterial
     }
@@ -57,5 +56,9 @@ class House {
 
     BigDecimal getArea() {
         return width * length
+    }
+
+    List<Window> findRooms(int minWindows) {
+        // TODO implement
     }
 }

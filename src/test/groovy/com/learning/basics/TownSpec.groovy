@@ -6,14 +6,13 @@ class TownSpec extends Specification {
 
     def "Create a town"() {
         when:
-        // List rooms = []
         List<House> CentralAveHouses = []
         List<House> CoddingRoadHouses = [
             new House("540 Codding Road", 8, 3, null, "30 years tar", "Black", 18, 16, 20),
-            new House("544 Codding Road", 9, 3, null, "30 years tar", "Black", 18, 20, 18)
-            // TODO: pass in rooms like:  new House(rooms, )
+            new House("544 Codding Road", 9, 3, null, "30 years tar", "Black", 18, 20, 18, 'on sale'),
+            new House("548 Codding Road", 3, 1, null, "30 years tar", "Black", 18, 20, 18, 'on sale')
         ]
-        List streets = [
+        List<Street> streets = [
             new Street("Codding Road", CoddingRoadHouses, 2, 900, "dead end street"),
             new Street("Central Ave", CentralAveHouses, 2, 900, "dead end street")
         ]
@@ -23,9 +22,9 @@ class TownSpec extends Specification {
         town.getNumberOfStreets() == 2
 
         when:
-        town.getHousesOnSaleWithMinNumberOfRooms(8)
+        List<House> searchResult = town.getHousesWithMinNumberOfRooms(4, 'on sale')
         then:
-        Exception ex = thrown()
-        ex.message == "Not implemented yet!"
+        searchResult.size() == 1
+        searchResult.get(0).address == "544 Codding Road"
     }
 }
