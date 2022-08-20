@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28cebbeb-d606-464b-aae9-9dfb618f7e57" name="Changes" comment="new functions in Room">
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/com/learning/basics/Window.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/com/learning/basics/Window.groovy" afterDir="false" />
-    </list>
+    <list default="true" id="28cebbeb-d606-464b-aae9-9dfb618f7e57" name="Changes" comment="window removed the function" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,17 +38,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Gradle.RoomSpec">
     <configuration name="HouseSpec" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -169,7 +167,21 @@
       <option name="project" value="LOCAL" />
       <updated>1660958839787</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="window removed the function">
+      <created>1660959363192</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660959363192</updated>
+    </task>
+    <task id="LOCAL-00003" summary="window removed the function">
+      <created>1660959383653</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660959383653</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +198,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="roomNewew" />
     <MESSAGE value="new functions in Room" />
-    <option name="LAST_COMMIT_MESSAGE" value="new functions in Room" />
+    <MESSAGE value="window removed the function" />
+    <option name="LAST_COMMIT_MESSAGE" value="window removed the function" />
   </component>
 </project>
