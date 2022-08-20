@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.learning.basics.RoomSpec" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-20T01:20:10" hostname="CELT" time="0.118">
+  <properties/>
+  <testcase name="area and volume of the room" classname="com.learning.basics.RoomSpec" time="0.118"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
