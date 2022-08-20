@@ -26,7 +26,6 @@ class Town {
 
         for (int i = 0; i < streets.size(); i++) {
             Street street = streets.get(i);
-            // for (Street street : getStreets()) {
             List<House> housesOneOnStreet = street.getHouses();
             for (House house : housesOneOnStreet) {
                 if (house.numberOfRooms >= desiredMinNumberOfRooms && house.status == desiredStatus) {
@@ -34,7 +33,6 @@ class Town {
                 }
             }
         }
-
         return result;
     }
 }
