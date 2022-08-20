@@ -50,10 +50,6 @@ class House {
         return numberOfParkingSpaces
     }
 
-    String getWallsMaterial() {
-        return WallsMaterial
-    }
-
     String getRoofMaterial() {
         return RoofMaterial
     }
@@ -66,7 +62,7 @@ class House {
         return width * length
     }
 
-    House.Material getHouseMaterial() {
+    Material getHouseMaterial() {
         return material
     }
 
@@ -79,6 +75,7 @@ class House {
 
         for (int i = 0; i < rooms.size(); i++) {
             Room room = rooms.get(i);
+            // TODO: finish
 //            List<Room> roomsWithMinNumberOfWindows = room.getWindows();
 //            for (Room room : roomsWithMinNumberOfWindows) {
 //                if (room.numberOfWindows >= desiredMinNumberOfWindows)
