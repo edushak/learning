@@ -16,8 +16,4 @@ class Window {
     BigDecimal getWindowArea() {
         return width * height
     }
-
-    Window.Material getWindowMaterial() {
-        return width * height
-    }
 }
