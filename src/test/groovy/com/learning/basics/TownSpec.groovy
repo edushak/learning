@@ -8,9 +8,9 @@ class TownSpec extends Specification {
         when:
         List<House> CentralAveHouses = []
         List<House> CoddingRoadHouses = [
-            new House("540 Codding Road", 8, 3, null, "30 years tar", "Black", 18, 16, 20),
-            new House("544 Codding Road", 9, 3, null, "30 years tar", "Black", 18, 20, 18, 'on sale'),
-            new House("548 Codding Road", 3, 1, null, "30 years tar", "Black", 18, 20, 18, 'on sale')
+            new House("540 Codding Road", 8, 3, 2, null, "30 years tar", "Black", 18, 16, 20),
+            new House("544 Codding Road", 9, 3, 2, null, "30 years tar", "Black", 18, 20, 18, 'on sale'),
+            new House("548 Codding Road", 3, 1, 1, null, "30 years tar", "Black", 18, 20, 18, 'on sale')
         ]
         List<Street> streets = [
             new Street("Codding Road", CoddingRoadHouses, 2, 900, "dead end street"),

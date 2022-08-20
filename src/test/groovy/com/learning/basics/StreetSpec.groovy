@@ -2,7 +2,7 @@ package com.learning.basics
 
 import spock.lang.Specification
 
-public class StreetSpec extends Specification {
+class StreetSpec extends Specification {
 
     def "getArea" () {
         when:
@@ -10,7 +10,8 @@ public class StreetSpec extends Specification {
         then:
         assert street1.getArea() == 1800
     }
-    def "Create a streetCR" () {
+
+    def "getNumberOfHouses" () {
         when:
        /*
         List <Room>
@@ -36,8 +37,8 @@ public class StreetSpec extends Specification {
         ]
         */
         List<House> houses = [
-            new House("540 Codding Road", 8, 3, null, "30 years tar", "Black", 18, 16, 20),
-            new House("544 Codding Road", 9, 3, null, "30 years tar", "Black", 18, 20, 18)
+            new House("540 Codding Road", 8, 3, 2, null, "30 years tar", "Black", 18, 16, 20),
+            new House("544 Codding Road", 9, 3, 2, null, "30 years tar", "Black", 18, 20, 18, 'on sale')
         ]
         def street = new Street ("Codding Road", houses, 2, 900, "dead end street")
 
@@ -45,15 +46,20 @@ public class StreetSpec extends Specification {
         street.getNumberOfHouses() == 2
     }
 
-    def "Create a Street2" () {
+    def "findHousesInStatus" () {
         when:
         List<House> houses = [
-            new House ("320 Central Ave", 4, 2, null, "15 years tar", "Brown", 15, 14, 20),
-            new House ("324 Central Ave", 5, 2, null,"10 years tar", "Brown", 16, 14, 19)
+                new House("320 Central Ave", 4, 2, 1, null, "15 years tar", "Brown", 15, 14, 20),
+                new House("324 Central Ave", 5, 2, 3, null, "10 years tar", "Brown", 16, 14, 19, 'on sale')
         ]
-        def street = new Street ("Central Ave", houses, 4, 12000, "dead end street")
+        def street = new Street("Central Ave", houses, 4, 12000, "dead end street")
 
         then:
         street.getNumberOfHouses() == 2
+
+        when:
+        List <House> searchResult = street.findHousesInStatus("on sale")
+        then:
+        searchResult.size() == 1
     }
 }

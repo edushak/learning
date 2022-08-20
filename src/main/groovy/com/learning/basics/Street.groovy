@@ -35,8 +35,13 @@ class Street {
         return width * length
     }
 
-    // TODO: implement
-    List<House> findHousesInStatus(String status) {
-        throw new Exception("Not implemented yet!")
+    List<House> findHousesInStatus(String desiredStatus) {
+        List<House> result = []
+        for (House house : houses) {
+            if (house.status == desiredStatus) {
+                result << house
+            }
+        }
+        return result;
     }
 }
