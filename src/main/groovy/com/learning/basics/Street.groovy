@@ -8,8 +8,9 @@ class Street {
     List<House> houses
     int width
     int length
-    // int numberOfParkingSpaces // TODO: move to House
     String details
+    // TODO: Anna, add - List<Street> connectedTo
+    // TODO: Anna, add - int zip
 
     Street(String name, List<House> houses, int width, int length, String details) {
         this.name = name

@@ -41,7 +41,7 @@ class HouseSpec extends Specification {
 
         List<Window> foundWindows = house2.findRooms(3)
         then:
-        foundWindows != null
+        foundWindows != null // TODO: Maria, fix
         foundWindows.size() == 3
 //        when:
 //        List<Room> searchResult = rooms.getRoomsWithMinNumberOfWindows(1)

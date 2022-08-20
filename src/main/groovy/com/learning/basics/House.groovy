@@ -5,8 +5,10 @@ package com.learning.basics
  */
 class House {
     enum Material {
-        Bricks, Blocks
+        Bricks, Blocks, Wood
     }
+
+    // TODO: Marai, add: int yearBuilt
     String status = 'livable not on sale'
 
     List<Room> rooms
@@ -67,7 +69,7 @@ class House {
     }
 
     List<Window> findRooms(int minWindows) {
-        // TODO implement
+        // TODO Maria, implement
     }
 
     List<Room> getRoomsWithMinNumberOfWindows(int desiredMinNumberOfWindows) {
@@ -75,7 +77,7 @@ class House {
 
         for (int i = 0; i < rooms.size(); i++) {
             Room room = rooms.get(i);
-            // TODO: finish
+            // TODO: Maria, finish
 //            List<Room> roomsWithMinNumberOfWindows = room.getWindows();
 //            for (Room room : roomsWithMinNumberOfWindows) {
 //                if (room.numberOfWindows >= desiredMinNumberOfWindows)
@@ -84,6 +86,4 @@ class House {
         }
         return result
     }
-
-
 }
