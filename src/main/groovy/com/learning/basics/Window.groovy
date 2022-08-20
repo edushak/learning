@@ -17,7 +17,7 @@ class Window {
         return width * height
     }
 
-    Window.Material getWindowMaterial() {
-        return width * height
+     Window.Material getWindowMaterial() {
+        return material
     }
 }

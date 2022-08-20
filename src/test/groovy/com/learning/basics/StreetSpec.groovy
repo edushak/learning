@@ -37,8 +37,8 @@ class StreetSpec extends Specification {
         ]
         */
         List<House> houses = [
-            new House("540 Codding Road", 8, 3, 2, null, "30 years tar", "Black", 18, 16, 20),
-            new House("544 Codding Road", 9, 3, 2, null, "30 years tar", "Black", 18, 20, 18, 'on sale')
+            new House(House.Material.Bricks,"540 Codding Road", rooms, 3, null, "30 years tar", "Black", 18, 16, 20),
+            new House(House.Material.Bricks,"544 Codding Road", rooms, 3, null, "30 years tar", "Black", 18, 20, 18, "on sale")
         ]
         def street = new Street ("Codding Road", houses, 2, 900, "dead end street")
 

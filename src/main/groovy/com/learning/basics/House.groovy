@@ -4,14 +4,16 @@ package com.learning.basics
  * Developer: Maria
  */
 class House {
-    // TODO: add enum Material, like we have for Window
-    String status = 'livable not on sale';
+    enum Material {
+        Bricks, Blocks
+    }
+    String status = 'livable not on sale'
 
-    int NumberOfRooms
+    List<Room> rooms
     int NumberOfFloors
+    Material material
     int numberOfParkingSpaces
     String address
-    String WallsMaterial
     String RoofMaterial
     String RoofColor
     BigDecimal length, width, height
@@ -20,13 +22,14 @@ class House {
     BigDecimal soldPrice
     BigDecimal todayEstimatedPrice
 
-    House(String address, int NumberOfRooms, int NumberOfFloors, int numberOfParkingSpaces, String WallsMaterial, String RoofMaterial,
+    House(Material material, String address, List<Room> rooms, int NumberOfFloors, int numberOfParkingSpaces,
+          String RoofMaterial,
           String RoofColor, BigDecimal length, BigDecimal width, BigDecimal height, String status = null) {
+        this.material = material
         this.address = address
-        this.NumberOfRooms = NumberOfRooms
+        this.rooms = rooms
         this.NumberOfFloors = NumberOfFloors
         this.numberOfParkingSpaces = numberOfParkingSpaces
-        this.WallsMaterial = WallsMaterial
         this.RoofMaterial = RoofMaterial
         this.RoofColor = RoofColor
         this.length = length
@@ -36,7 +39,7 @@ class House {
     }
 
     int getNumberOfRooms() {
-        return NumberOfRooms
+        return rooms.size();
     }
 
     int getNumberOfFloors() {
@@ -63,7 +66,27 @@ class House {
         return width * length
     }
 
+    House.Material getHouseMaterial() {
+        return material
+    }
+
     List<Window> findRooms(int minWindows) {
         // TODO implement
     }
+
+    List<Room> getRoomsWithMinNumberOfWindows(int desiredMinNumberOfWindows) {
+        List<Room> result = []
+
+        for (int i = 0; i < rooms.size(); i++) {
+            Room room = rooms.get(i);
+//            List<Room> roomsWithMinNumberOfWindows = room.getWindows();
+//            for (Room room : roomsWithMinNumberOfWindows) {
+//                if (room.numberOfWindows >= desiredMinNumberOfWindows)
+//                    result << room
+//            }
+        }
+        return result
+    }
+
+
 }
