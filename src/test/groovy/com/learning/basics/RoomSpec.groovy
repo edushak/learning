@@ -11,14 +11,14 @@ class RoomSpec extends Specification {
             new Window(24, 25, Window.Material.Plastic),
             new Window(24, 25, Window.Material.Wood)
         ]
-        def room1 = new Room("Yellow", 6.2, 4.5, 2.8, 2, 3, windows)
+        def room1 = new Room("Yellow", 6.2, 4.5, 2.8, 3, windows, Room.RoomType.Bedroom)
 
         then:
         assert room1.getArea() == 27.90
         assert room1.getVolume() == 78.120
 
         when:
-        def room = new Room("Yellow", 100.0, 100.0, 120.0, 3, 1, windows)
+        def room = new Room("Yellow", 100.0, 100.0, 120.0, 1, windows, Room.RoomType.Family)
         then:
         room.getNumberOfClosets() == 1
 
