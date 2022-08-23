@@ -35,4 +35,15 @@ class Town {
         }
         return result;
     }
+
+    List <Street> findStreetsConnectedToStreet(String streetsConnected) {
+        List <Street> result = []
+        for (Street street : streets) {
+            // Town streetsInTown = streetsConnected {
+            if (street.isConnectedTo(streetsConnected)) {  // fixme
+                result << street
+            }
+        }
+        return result;
+    }
 }

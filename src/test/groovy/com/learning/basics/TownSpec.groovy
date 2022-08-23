@@ -1,8 +1,11 @@
 package com.learning.basics
 
+import spock.lang.Shared
 import spock.lang.Specification
 
 class TownSpec extends Specification {
+
+    @Shared Town town
 
     def "Create a town"() {
         given:
@@ -34,12 +37,12 @@ class TownSpec extends Specification {
         List<House> CentralAveHouses = []
 
         List<Street> streets = [
-            new Street("Codding Road", CoddingRoadHouses, 2, 900, "dead end street"),
-            new Street("Central Ave", CentralAveHouses, 2, 900, "dead end street")
+            new Street("Codding Road", CoddingRoadHouses, 2, 900, "dead end street", '07090', null),
+            new Street("Central Ave", CentralAveHouses, 2, 900, "dead end street", '07090', null)
         ]
 
         when:
-        def town = new Town("Westfield", "John Smith", streets)
+        town = new Town("Westfield", "John Smith", streets)
 
         then:
         town.getNumberOfStreets() == 2
@@ -50,4 +53,13 @@ class TownSpec extends Specification {
         searchResult.size() == 1
         searchResult.get(0).address == "544 Codding Road"
     }
+
+    def "findStreetsConnectedToStreet" () {
+        when:
+        List<Street> searchResult = town.findStreetsConnectedToStreet ("Central Ave")
+        then:
+        searchResult.size() == 0
+        // "Codding Road"
+    }
+
 }
