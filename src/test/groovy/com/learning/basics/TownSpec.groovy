@@ -15,19 +15,28 @@ class TownSpec extends Specification {
             new Window(24.0, 25.0, Window.Material.Wood)
         ]
         List rooms1 = [
-            new Room("Yellow", 6.2, 4.5, 2.8, 2, 3, windows),
-            new Room("Yellow", 100.0, 100.0, 120.0, 3, 1, windows)
+                new Room("Yellow", 6.2, 4.5, 2.8, /*2*/ 3, windows,
+                        Room.RoomType.Guest),
+                new Room("Yellow", 100.0, 100.0, 120.0, /*1*/3,
+                        windows, Room.RoomType.Guest)
         ]
         List rooms2 = [
-            new Room("Yellow", 6.2, 4.5, 2.8, 2, 3, windows),
-            new Room("Yellow", 12.2, 16.5, 9.0, 2, 3, windows),
-            new Room("Yellow", 11.0, 14.0, 10.0, 3, 1, windows),
-            new Room("Yellow", 12.0, 11.0, 14.0, 3, 1, windows)
+                new Room("Yellow", 6.2, 4.5, 2.8, 2,/* 3*/ windows,
+                        Room.RoomType.Family),
+                new Room("Yellow", 12.2, 16.5, 9.0, 2,/* 3*/ windows,
+                        Room.RoomType.Family),
+                new Room("Yellow", 11.0, 14.0, 10.0, 3,/* 1*/ windows,
+                        Room.RoomType.Bedroom),
+                new Room("Yellow", 12.0, 11.0, 14.0, 3,/* 1*/ windows,
+                        Room.RoomType.Bedroom)
         ]
         List rooms3 = [
-            new Room("Yellow", 12.2, 16.5, 9.0, 2, 3, windows),
-            new Room("Yellow", 11.0, 14.0, 10.0, 3, 1, windows),
-            new Room("Yellow", 12.0, 11.0, 14.0, 3, 1, windows)
+                new Room("Yellow", 12.2, 16.5, 9.0, 2,/* 3*/ windows,
+                        Room.RoomType.Entertainment),
+                new Room("Yellow", 11.0, 14.0, 10.0, 3,/* 1*/ windows,
+                        Room.RoomType.Living),
+                new Room("Yellow", 12.0, 11.0, 14.0, 3,/* 1*/ windows,
+                        Room.RoomType.Living)
         ]
         List<House> CoddingRoadHouses = [
             new House(House.Material.Wood, "540 Codding Road",   rooms1, 3, 2, "30 years tar",     "Black",            18, 16, 20),

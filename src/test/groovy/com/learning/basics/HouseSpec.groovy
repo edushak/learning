@@ -6,20 +6,20 @@ import spock.lang.Specification
 class HouseSpec extends Specification {
 
     @Shared List<Room> rooms = [
-            new Room("white", 3.5, 6.2, 2.7,0, 1, [
+            new Room("white", 3.5, 6.2, 2.7, 1, [
                     new Window(36.0, 48.0, Window.Material.Plastic),
                     new Window(36.0, 48.0, Window.Material.Plastic),
-            ]),
-            new Room("white", 3.5, 6.2, 2.7,0, 1, [
+            ], Room.RoomType.Living),
+            new Room("white", 3.5, 6.2, 2.7, 1, [
                     new Window(36.0, 48.0, Window.Material.Plastic),
                     new Window(36.0, 48.0, Window.Material.Plastic),
                     new Window(36.0, 48.0, Window.Material.Wood)
-            ]),
+            ], Room.RoomType.Family),
             // basement
-            new Room("white", 3.5, 6.2, 2.7,0, 1, [
+            new Room("white", 3.5, 6.2, 2.7, 1, [
                     new Window(36.0, 48.0, Window.Material.Metal),
                     new Window(36.0, 48.0, Window.Material.Metal)
-            ]),
+            ], Room.RoomType.Entertainment),
     ];
 
     def "HouseArea"() {

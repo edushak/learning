@@ -13,14 +13,14 @@ class StreetSpec extends Specification {
                 new Window(24.0, 25.0, Window.Material.Plastic, "white"),
                 new Window(24.0, 25.0, Window.Material.Wood)
         ]
-        def room1 = new Room("Yellow", 6.2, 4.5, 2.8, 2, 3, windows1)
+        def room1 = new Room("Yellow", 6.2, 4.5, 2.8, 2 /*3*/, windows1, Room.RoomType.Family)
 
         List<Window> windows2 = [
                 new Window(36.0, 25.0, Window.Material.Plastic, "white"),
                 new Window(24.0, 25.0, Window.Material.Plastic, "white"),
                 new Window(24.0, 25.0, Window.Material.Wood)
         ]
-        def room2 = new Room("Yellow", 6.2, 4.5, 2.8, 2, 3, windows2)
+        def room2 = new Room("Yellow", 6.2, 4.5, 2.8, 2 /*3*/, windows2, Room.RoomType.Living)
 
         List<House> houses = [
                 new House(House.Material.Bricks, "540 Codding Road", [room1, room2], 3, 2, "30 years tar", "Black", 18.0, 16.0, 20.0, "under construction"),

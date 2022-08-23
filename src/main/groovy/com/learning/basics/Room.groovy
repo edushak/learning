@@ -4,7 +4,6 @@ package com.learning.basics
  * Developer: Oleh
  */
 class Room {
-
     enum RoomType {
         Living, Family, Bedroom, Guest, Entertainment
     }
@@ -13,21 +12,24 @@ class Room {
     String wallColor // 63EDRFT
     BigDecimal length, width, height // measurements
     // integer - whole number
-    int numberOfWindows // TODO: delete, for Oleh
+   // int numberOfWindows // TODO: delete, for Oleh
     int numberOfClosets
     List<Window> windows
+    RoomType roomType
+
 
     // constructor -----------------------------------
     // TODO: Oleh, add RoomType to constructor
-    Room(String wallColor, BigDecimal length, BigDecimal width, BigDecimal height, int numberOfWindows,
-         int numberOfClosets, List<Window> windows) {
+    Room(String wallColor, BigDecimal length, BigDecimal width, BigDecimal height,
+         int numberOfClosets, List<Window> windows, RoomType roomType) {
         this.wallColor = wallColor
         this.length = length
         this.width = width
         this.height = height
-        this.numberOfWindows = numberOfWindows
         this.numberOfClosets = numberOfClosets
         this.windows = windows
+        this.roomType = roomType
+
     }
 
     // functions/methods ---------------------------------------
@@ -47,12 +49,12 @@ class Room {
         return height
     }
 
-    int getNumberOfWindows() {
-        return numberOfWindows
-    }
-
     int getNumberOfClosets() {
         return numberOfClosets
+    }
+
+    RoomType getRoomType() {
+        return roomType
     }
 
     List<Window> findWindows(Window.Material desiredMaterial) {
@@ -76,9 +78,10 @@ class Room {
                 ", length=" + length +
                 ", width=" + width +
                 ", height=" + height +
-                ", numberOfWindows=" + numberOfWindows +
+               // ", numberOfWindows=" + numberOfWindows +
                 ", numberOfClosets=" + numberOfClosets +
                 ", windows=" + windows +
+                ", roomType" + roomType +
                 '}';
     }
 
