@@ -12,14 +12,14 @@ class Room {
     String wallColor // 63EDRFT
     BigDecimal length, width, height // measurements
     // integer - whole number
-   // int numberOfWindows // TODO: delete, for Oleh
+   // int numberOfWindows //
     int numberOfClosets
     List<Window> windows
     RoomType roomType
 
 
     // constructor -----------------------------------
-    // TODO: Oleh, add RoomType to constructor
+
     Room(String wallColor, BigDecimal length, BigDecimal width, BigDecimal height,
          int numberOfClosets, List<Window> windows, RoomType roomType) {
         this.wallColor = wallColor
