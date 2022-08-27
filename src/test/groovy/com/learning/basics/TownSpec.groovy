@@ -46,8 +46,8 @@ class TownSpec extends Specification {
         List<House> CentralAveHouses = []
 
         List<Street> streets = [
-            new Street("Codding Road", CoddingRoadHouses, 2, 900, "dead end street", '07090', null),
-            new Street("Central Ave", CentralAveHouses, 2, 900, "dead end street", '07090', null)
+            new Street("Codding Road", CoddingRoadHouses, 900, "dead end street", '07090', null),
+            new Street("Central Ave", CentralAveHouses, 900, "dead end street", '07090', null)
         ]
 
         when:

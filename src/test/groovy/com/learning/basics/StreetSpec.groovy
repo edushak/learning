@@ -27,10 +27,10 @@ class StreetSpec extends Specification {
                 new House(House.Material.Blocks, "544 Codding Road", 2010, [room1, room2], 3, 1, "30 years tar", "Black", 18.0, 20.0, 18.0, "on sale")
         ]
 
-        street1 = new Street ("Codding Road", houses, 2 /* lines */, 900 /* feet */, "dead end street", '07090', [street3, street4])
-        street2 = new Street ("New Road", houses, 2, 900, "newly built road", '07090', [street3, street4])
-        street3 = new Street ("First Street", houses, 2, 800, "", '07090', [street1, street2])
-        street4 = new Street ("Central Ave", houses, 4, 1800, "", '07091', [street1, street2, street3])
+        street1 = new Street ("Codding Road", houses, 900 /* feet */, "dead end street", '07090', [street3, street4])
+        street2 = new Street ("New Road", houses, 900, "newly built road", '07090', [street3, street4])
+        street3 = new Street ("First Street", houses, 800, "", '07090', [street1, street2])
+        street4 = new Street ("Central Ave", houses, 1800, "", '07091', [street1, street2, street3])
     }
 
     def isConnectedTo() {

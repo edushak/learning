@@ -6,6 +6,9 @@
 * DDL - Data Definition language
 * Gradle or Maven - build tool/system (used for various languages)
  
+PI - Personal Information
+Data masking - hiding Personal Information
+Data massaging - adding, removing, hiding, modifying, etc.
 
 Git branches
 
@@ -16,7 +19,6 @@ Git branches
     Ctrl+T - update project (from remote to local)
     Commit - local file to local branch
     Push - local files to remote branch
-
 
 
 IntelliJ IDEA shortcuts
