@@ -93,5 +93,15 @@ class House {
         return result;
     }
 
+
+    List<Room> getRoomsByType(Room.RoomType desiredRoomsByType) {
+        List<Room> result = []
+        for (Room room : rooms) {
+            if (room.roomType == desiredRoomsByType)
+                result << room //room
+
+        }
+        return result
+    }
 }
 

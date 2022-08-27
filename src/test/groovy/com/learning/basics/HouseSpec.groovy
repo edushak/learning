@@ -64,4 +64,14 @@ class HouseSpec extends Specification {
         then:
         house3.numberOfRooms == 3 && getNumberOfRoomsWithClosets.size() == 2
     }
+    def "findRooms ByType"() {
+        when:
+        def house3 = new House( House.Material.Bricks, "106 Kelecka", 1999, rooms, 3, 2,
+                "30 years tar", "Black", 18.0, 16.0, 20.0, "on sale")
+
+        List<Room> searchResult = house3.getRoomsByType(Room.RoomType.Family)
+        then:
+        searchResult.size() == 1
+//        searchResult.get() == Room.RoomType.Family
+    }
 }
