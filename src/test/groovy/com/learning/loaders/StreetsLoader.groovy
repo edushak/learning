@@ -7,7 +7,7 @@ class StreetsLoader {
 
     List<Street> loadCSVIntoMemorySmart(File input) {
         //TODO: use CSV library - https://www.geeksforgeeks.org/reading-csv-file-java-using-opencsv/
-        FileReader filereader = new FileReader(file);
+        FileReader filereader = new FileReader(input);
 
         // create csvReader object passing
         // file reader as a parameter
