@@ -6,16 +6,15 @@ package com.learning.basics
 class Street {
     String name
     List<House> houses
-    int width
     int length
     String details
     String zip
     List<Street> connectedTo
 
-    Street(String name, List<House> houses, int width, int length, String details, String zip, List<Street> connectedTo = []) {
+    // TODO remove width from everywhere
+    Street(String name, List<House> houses, int length, String details, String zip, List<Street> connectedTo = []) {
         this.name = name
         this.houses = houses
-        this.width = width
         this.length = length
         this.details = details
         this.zip = zip
@@ -26,24 +25,16 @@ class Street {
         return houses.size()
     }
 
-    int getWidth() {
-        return width
-    }
-
     String getDetails() {
         return details
     }
 
-    BigDecimal getArea() {
-        return width * length
-    }
+//    BigDecimal getArea() {
+//        return -1
+//    } // FIXME
 
     String zip () {
         return zip
-    }
-
-    String connected () {
-        return connected
     }
 
     List<House> findHousesInStatus(String desiredStatus) {
