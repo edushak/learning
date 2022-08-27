@@ -8,9 +8,8 @@ class House {
         Bricks, Blocks, Wood
     }
 
-    // TODO: Marai, add: int yearBuilt
     String status = 'livable not on sale'
-
+    int yearBuilt
     List<Room> rooms
     int NumberOfFloors
     Material material
@@ -24,11 +23,12 @@ class House {
     BigDecimal soldPrice
     BigDecimal todayEstimatedPrice
 
-    House(Material material, String address, List<Room> rooms, int NumberOfFloors, int numberOfParkingSpaces,
-          String RoofMaterial,
+    House(Material material, String address, int yearBuilt, List<Room> rooms, int NumberOfFloors,
+          int numberOfParkingSpaces, String RoofMaterial,
           String RoofColor, BigDecimal length, BigDecimal width, BigDecimal height, String status = null) {
         this.material = material
         this.address = address
+        this.yearBuilt = yearBuilt
         this.rooms = rooms
         this.NumberOfFloors = NumberOfFloors
         this.numberOfParkingSpaces = numberOfParkingSpaces
@@ -44,11 +44,15 @@ class House {
         return rooms.size();
     }
 
+    int getYearBuilt() {
+        return yearBuilt
+    }
+
     int getNumberOfFloors() {
         return NumberOfFloors
     }
 
-    int getNumberOfParkingSpaces () {
+    int getNumberOfParkingSpaces() {
         return numberOfParkingSpaces
     }
 
@@ -68,22 +72,26 @@ class House {
         return material
     }
 
-    List<Window> findRooms(int minWindows) {
-        // TODO Maria, implement
-    }
-
-    List<Room> getRoomsWithMinNumberOfWindows(int desiredMinNumberOfWindows) {
+    List<Room> findRooms(int minWindows) {
         List<Room> result = []
-
-        for (int i = 0; i < rooms.size(); i++) {
-            Room room = rooms.get(i);
-            // TODO: Maria, finish
-//            List<Room> roomsWithMinNumberOfWindows = room.getWindows();
-//            for (Room room : roomsWithMinNumberOfWindows) {
-//                if (room.numberOfWindows >= desiredMinNumberOfWindows)
-//                    result << room
-//            }
+        for (Room room : rooms) {
+            if (room.windows.size() >= minWindows) {
+                result << room
+            }
         }
-        return result
+        return result;
     }
+
+
+    List<Room> numberOfRoomsWithClosets(int numberOfClosets) {
+        List<Room> result = []
+        for (Room room : rooms) {
+            if (room.numberOfClosets >= numberOfClosets) {
+                result << room
+            }
+        }
+        return result;
+    }
+
 }
+

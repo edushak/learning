@@ -6,9 +6,9 @@ import spock.lang.Specification
 class HouseSpec extends Specification {
 
     @Shared List<Room> rooms = [
-            new Room("white", 3.5, 6.2, 2.7, 1, [
+            new Room("white", 3.5, 6.2, 2.7, 0, [
                     new Window(36.0, 48.0, Window.Material.Plastic),
-                    new Window(36.0, 48.0, Window.Material.Plastic),
+                    new Window(36.0, 48.0, Window.Material.Plastic)
             ], Room.RoomType.Living),
             new Room("white", 3.5, 6.2, 2.7, 1, [
                     new Window(36.0, 48.0, Window.Material.Plastic),
@@ -24,8 +24,7 @@ class HouseSpec extends Specification {
 
     def "HouseArea"() {
         when:
-        def house1 = new House(
-                House.Material.Blocks, "540 Codding Road", rooms, 3, 2,
+        def house1 = new House(House.Material.Blocks, "540 Codding Road", 1999, rooms, 3, 2,
                 "30 years tar", "Black", 18.0, 16.0, 20.0, "on sale")
         then:
         house1.rooms.size() == 3
@@ -36,16 +35,33 @@ class HouseSpec extends Specification {
     def "findRooms"() {
         when:
         def house2 = new House(
-                House.Material.Bricks, "106 Kelecka", rooms, 3, 2,
+                House.Material.Bricks, "106 Kelecka", 1986, rooms, 3, 2,
                 "30 years tar", "Black", 18.0, 16.0, 20.0, "on sale")
 
         List<Window> foundWindows = house2.findRooms(3)
         then:
-        foundWindows != null // TODO: Maria, fix
-        foundWindows.size() == 3
-//        when:
-//        List<Room> searchResult = rooms.getRoomsWithMinNumberOfWindows(1)
-//        then:
-//        searchResult.amount() == 1
+        foundWindows.size() == 1
+
+        when:
+        List<Room> searchResult = house2.findRooms(2)
+        then:
+        searchResult.size() == 3
+
+        when:
+        searchResult = house2.findRooms(1)
+        then:
+        searchResult.size() == 3
+    }
+
+    def numberOfRoomsWithClosets() {
+        given:
+        def house3 = new House(
+                House.Material.Bricks, "106 Kelecka", 1986, rooms, 3, 2,
+                "30 years tar", "Black", 18.0, 16.0, 20.0, "on sale")
+
+        when:
+        List<Room> getNumberOfRoomsWithClosets = house3.numberOfRoomsWithClosets(1)
+        then:
+        house3.numberOfRooms == 3 && getNumberOfRoomsWithClosets.size() == 2
     }
 }

@@ -39,9 +39,9 @@ class TownSpec extends Specification {
                         Room.RoomType.Living)
         ]
         List<House> CoddingRoadHouses = [
-            new House(House.Material.Wood, "540 Codding Road",   rooms1, 3, 2, "30 years tar",     "Black",            18, 16, 20),
-            new House(House.Material.Bricks, "544 Codding Road", rooms2, 3, 2, "Rubber",           "Red",              18, 20, 15, 'on sale'),
-            new House(House.Material.Blocks, "548 Codding Road", rooms3, 1, 1, null /* unknown */, null /* unknown */, 18, 20, 18, 'on sale')
+            new House(House.Material.Wood, "540 Codding Road", 1999, rooms1, 3, 2, "30 years tar", "Black", 18, 16, 20),
+            new House(House.Material.Bricks, "544 Codding Road", 2010, rooms2, 3, 2, "Rubber", "Red", 18, 20, 15, 'on sale'),
+            new House(House.Material.Blocks, "548 Codding Road", 2008,  rooms3, 1, 1, null /* unknown */, null /* unknown */, 18, 20, 18, 'on sale')
         ]
         List<House> CentralAveHouses = []
 

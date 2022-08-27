@@ -23,8 +23,8 @@ class StreetSpec extends Specification {
         def room2 = new Room("Yellow", 6.2, 4.5, 2.8, 2 /*3*/, windows2, Room.RoomType.Living)
 
         List<House> houses = [
-                new House(House.Material.Bricks, "540 Codding Road", [room1, room2], 3, 2, "30 years tar", "Black", 18.0, 16.0, 20.0, "under construction"),
-                new House(House.Material.Blocks, "544 Codding Road", [room1, room2], 3, 1, "30 years tar", "Black", 18.0, 20.0, 18.0, "on sale")
+                new House(House.Material.Bricks, "540 Codding Road", 1999, [room1, room2], 3, 2, "30 years tar", "Black", 18.0, 16.0, 20.0, "under construction"),
+                new House(House.Material.Blocks, "544 Codding Road", 2010, [room1, room2], 3, 1, "30 years tar", "Black", 18.0, 20.0, 18.0, "on sale")
         ]
 
         street1 = new Street ("Codding Road", houses, 2 /* lines */, 900 /* feet */, "dead end street", '07090', [street3, street4])
