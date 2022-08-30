@@ -6,15 +6,31 @@ import com.opencsv.CSVReader
 class StreetsLoader {
 
     List<Street> loadCSVIntoMemorySmart(File input) {
-        //TODO: use CSV library - https://www.geeksforgeeks.org/reading-csv-file-java-using-opencsv/
+        List<Street> result = []
+
+        // using CSV library - https://www.geeksforgeeks.org/reading-csv-file-java-using-opencsv/
         FileReader filereader = new FileReader(input);
-
-        // create csvReader object passing
-        // file reader as a parameter
         CSVReader csvReader = new CSVReader(filereader);
-        // TODO for Anna
+        try {
+            String[] line;
+            csvReader.skip(1);
+            while ((line = csvReader.readNext()) != null) {
+                def StreetName = line[0]
+                def HouseNumber = line[1]
+                def YearBuilt = line[2]
+                def Status = line[3]
+                def Zip = line[4]
+                def Length = line[5]
 
-        return null
+                def zipInt = Integer.parseInt(Length)
+                def street = new Street(StreetName, [], zipInt, "some details", Zip, [])
+                result.add(street)
+            }
+        } finally {
+            csvReader?.close()
+            filereader?.close()
+        }
+        return result
     }
 
     /**
