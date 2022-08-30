@@ -11,7 +11,6 @@ class Street {
     String zip
     List<Street> connectedTo
 
-    // TODO remove width from everywhere
     Street(String name, List<House> houses, int length, String details, String zip, List<Street> connectedTo = []) {
         this.name = name
         this.houses = houses
@@ -28,10 +27,6 @@ class Street {
     String getDetails() {
         return details
     }
-
-//    BigDecimal getArea() {
-//        return -1
-//    } // FIXME
 
     String zip () {
         return zip

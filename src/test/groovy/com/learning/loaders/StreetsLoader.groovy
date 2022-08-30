@@ -58,8 +58,7 @@ class StreetsLoader {
         def lines = input.readLines()
         lines.each { String line ->
             if (linesCounter == 0) {
-                // reading header
-                // TODO something
+                // reading header or skip
             } else {
                 String[] columns = line.split(',')
                 def StreetName = columns[0]
@@ -79,6 +78,6 @@ class StreetsLoader {
     }
 
     int saveIntoDb(List<Street> input) {
-        // TODO
+        // TODO for Ed
     }
 }
