@@ -55,4 +55,16 @@ class Street {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "Street{" +
+                "name='" + name + '\'' +
+                ", houses=" + houses +
+                ", length=" + length +
+                ", details='" + details + '\'' +
+                ", zip='" + zip + '\'' +
+                ", connectedTo=" + connectedTo +
+                '}';
+    }
 }
