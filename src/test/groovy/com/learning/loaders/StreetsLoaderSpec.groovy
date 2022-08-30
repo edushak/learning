@@ -2,6 +2,7 @@ package com.learning.loaders
 
 import com.learning.basics.Street
 import groovy.util.logging.Slf4j
+import spock.lang.Ignore
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -10,6 +11,7 @@ class StreetsLoaderSpec extends Specification {
 
     @Shared loader = new StreetsLoader()
 
+    @Ignore
     def "LoadCSVIntoMemory"() {
         when:
         File inputFile = new File("src/test/resources/data/Westfield.csv")
@@ -18,7 +20,7 @@ class StreetsLoaderSpec extends Specification {
         streets.each {log.info("${it}") }
         then:
         assert streets.size() == 2
-        assert streets[0].getName().contains("Codding")
+        assert streets[0].getName() == "Codding Road, NJ"
     }
 
     def "loadCSVIntoMemorySmart"() {
@@ -29,6 +31,6 @@ class StreetsLoaderSpec extends Specification {
         streets.each { Street street -> log.info("${street.toString()}") }
         then:
         assert streets.size() == 2
-        assert streets[0].getName().contains("Codding")
+        assert streets[0].getName() == "Codding Road, NJ"
     }
 }

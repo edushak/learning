@@ -43,6 +43,7 @@ class StreetsLoader {
      * @param input
      * @return List<Street>
      */
+    @Deprecated
     List<Street> loadCSVIntoMemory(File input) {
         if (input == null) {
             return null
