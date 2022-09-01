@@ -1,0 +1,4 @@
+Material,Address,YearBuilt,NumberOfFloors,numberOfParkingSpaces,RoofMaterial,RoofColor
+Bricks,"540 Codding Road",2014,3,2,"30 years tar","Brown"
+Blocks,"544 Codding Road",2008,2,2,"20 years tar","Black"
+Wood,"548 Codding Road",1994,1,1,"20 years tar","Brown"
