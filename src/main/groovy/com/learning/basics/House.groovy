@@ -3,7 +3,7 @@ package com.learning.basics
 /**
  * Developer: Maria
  */
-class House {
+class House extends Object {
     enum Material {
         Bricks, Blocks, Wood
     }
