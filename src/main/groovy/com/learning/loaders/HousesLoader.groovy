@@ -1,6 +1,7 @@
 package com.learning.loaders
 
 import com.learning.basics.House
+import com.learning.basics.RealEstateException
 
 class HousesLoader {
     List<House> loadCSVIntoMemory(File input) {
@@ -32,7 +33,7 @@ class HousesLoader {
                 try {
                     material = House.Material.valueOf(materialNew)
                 } catch (Exception any) {
-
+                    throw new RealEstateException("Material ${materialNew} is not supported!", any)
                 }
 
                 def yearsInt = Integer.parseInt(YearBuilt)
