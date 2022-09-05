@@ -19,6 +19,9 @@ class PdfHelper {
             } else {
                 System.out.println("PDF document $pdfFile is encrypted. Cannot read!");
             }
+        } catch(Exception ex) {
+            System.err.println("Something bad happened!");
+            System.err.println(ex.toString());
         } finally {
             // document?.close();
         }
