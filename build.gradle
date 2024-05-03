@@ -12,23 +12,37 @@ repositories {
 }
 
 dependencies {
-    implementation "org.codehaus.groovy:groovy-all:${groovy_ver}"
+    // implementation "org.codehaus.groovy:groovy-all:${groovy_ver}"
+    // https://mvnrepository.com/artifact/org.apache.groovy/groovy
+    implementation group: 'org.apache.groovy', name: 'groovy', version: "$groovy_ver"
+    // implementation group: 'org.apache.groovy', name: 'groovy-all', version: '4.0.13' //, ext: 'pom'
+    // https://mvnrepository.com/artifact/org.apache.groovy/groovy-all
     // implementation(group: "", name: "", version: "")
     implementation 'org.codehaus.gpars:gpars:1.2.1'
 
-    implementation 'org.slf4j:slf4j-api:1.7.36'
-    implementation 'org.slf4j:slf4j-simple:1.7.36'
+    implementation 'org.slf4j:slf4j-api:2.0.5'
+    implementation 'org.slf4j:slf4j-simple:2.0.5'
 
-    implementation 'org.xerial:sqlite-jdbc:3.36.0.3'
-    implementation group: 'com.opencsv', name: 'opencsv', version: '4.6'
+    implementation 'org.jsoup:jsoup:1.15.4'
+
+    implementation 'org.xerial:sqlite-jdbc:3.42.0.0'
+    implementation group: 'com.opencsv', name: 'opencsv', version: '5.7.1'
 
     // https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox
-    implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.26'
+    implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.29'
     // TODO: upgrade some day - implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: '3.0.0-RC1'
 
+    // https://mvnrepository.com/artifact/org.apache.lucene/lucene-core
+    implementation 'org.apache.lucene:lucene-core:9.5.0'
+    implementation 'org.apache.lucene:lucene-queryparser:9.5.0'
+    implementation 'org.apache.lucene:lucene-analyzers-common:8.11.2'
+
     // https://mvnrepository.com/artifact/org.testng/testng
-    testImplementation 'org.spockframework:spock-core:2.1-groovy-3.0'
-    testImplementation group: 'org.testng', name: 'testng', version: '6.13.1'
+    // testImplementation 'org.spockframework:spock-core:2.3-groovy-3.0'
+    // https://mvnrepository.com/artifact/org.spockframework/spock-core
+    testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.4-M1-groovy-4.0'
+
+    testImplementation group: 'org.testng', name: 'testng', version: '7.7.0'
 }
 
 test { useJUnitPlatform() }
