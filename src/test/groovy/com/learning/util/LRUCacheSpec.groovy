@@ -31,11 +31,12 @@ class LRUCacheSpec extends Specification {
         ]
 
         when:
+        // "two" is the Least Recently Used entry, but after we "touch" it with get() - it's not
         cache.get("two")
         cache.put("five", 5)
         then:
         cache == [
-            "two"  : 2,
+            "two"  : 2, // "two" stays
             "four" : 4,
             "five" : 5
         ]
