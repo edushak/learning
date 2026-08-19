@@ -2,5 +2,12 @@
 like reading and writing files, working with collections, etc.
 
 It contains following utilities:
-* TextAnalyzer
+* Java:
+  * TextAnalyzer
+ 
+* Groovy:
+  * IOHelper - reads files
+  * PdfHelper - scrapes plain text off of PDF documents
+  * GoogleAiGeminiChatModelITSpec - queries Gemini via LangChain
+
 * more to be added

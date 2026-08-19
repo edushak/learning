@@ -1,48 +1,45 @@
-group 'learning'
-version '1.0-SNAPSHOT'
+group = 'learning'
+version = '1.2-SNAPSHOT'
 
 apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'idea'
-
-// sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    // implementation "org.codehaus.groovy:groovy-all:${groovy_ver}"
-    // https://mvnrepository.com/artifact/org.apache.groovy/groovy
-    implementation group: 'org.apache.groovy', name: 'groovy', version: "$groovy_ver"
-    // implementation group: 'org.apache.groovy', name: 'groovy-all', version: '4.0.13' //, ext: 'pom'
+
     // https://mvnrepository.com/artifact/org.apache.groovy/groovy-all
-    // implementation(group: "", name: "", version: "")
+    implementation "org.apache.groovy:groovy-all:${groovy_ver}"
     implementation 'org.codehaus.gpars:gpars:1.2.1'
 
-    implementation 'org.slf4j:slf4j-api:2.0.5'
-    implementation 'org.slf4j:slf4j-simple:2.0.5'
-
-    implementation 'org.jsoup:jsoup:1.15.4'
-
-    implementation 'org.xerial:sqlite-jdbc:3.42.0.0'
-    implementation group: 'com.opencsv', name: 'opencsv', version: '5.7.1'
-
-    // https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox
-    implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.29'
-    // TODO: upgrade some day - implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: '3.0.0-RC1'
+    implementation 'org.slf4j:slf4j-api:2.0.17'
+    implementation 'org.slf4j:slf4j-simple:2.0.17'
 
     // https://mvnrepository.com/artifact/org.apache.lucene/lucene-core
     implementation 'org.apache.lucene:lucene-core:9.5.0'
     implementation 'org.apache.lucene:lucene-queryparser:9.5.0'
     implementation 'org.apache.lucene:lucene-analyzers-common:8.11.2'
 
-    // https://mvnrepository.com/artifact/org.testng/testng
-    // testImplementation 'org.spockframework:spock-core:2.3-groovy-3.0'
-    // https://mvnrepository.com/artifact/org.spockframework/spock-core
-    testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.4-M1-groovy-4.0'
+    implementation "org.xerial:sqlite-jdbc:3.50.3.0"
+    implementation "com.opencsv:opencsv:5.12.0"
 
-    testImplementation group: 'org.testng', name: 'testng', version: '7.7.0'
+    implementation 'org.jsoup:jsoup:1.15.4'
+
+    implementation "dev.langchain4j:langchain4j-core:${langchain_ver}"
+    implementation "dev.langchain4j:langchain4j-google-ai-gemini:${langchain_ver}"
+    implementation "dev.langchain4j:langchain4j-vertex-ai:${langchain_ver}-beta15"
+
+    // https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox
+    implementation "org.apache.pdfbox:pdfbox:3.0.6" // 2.0.27
+
+    // https://mvnrepository.com/artifact/org.spockframework/spock-core
+    testImplementation 'org.spockframework:spock-core:2.4-M6-groovy-4.0'
+
+    testImplementation "org.testng:testng:7.11.0"
+    testImplementation "org.assertj:assertj-core:3.27.6"
 }
 
 test { useJUnitPlatform() }
