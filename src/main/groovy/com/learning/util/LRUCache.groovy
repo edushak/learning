@@ -1,5 +1,7 @@
 package com.learning.util
 
+import groovy.transform.CompileStatic
+
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.ConcurrentLinkedDeque
 
@@ -7,6 +9,7 @@ import java.util.concurrent.ConcurrentLinkedDeque
  * Naive LRU implementation
  * @param <T>
  */
+@CompileStatic
 class LRUCache<T> {
     int cacheLimit
     Map<String,T> cache
@@ -14,7 +17,7 @@ class LRUCache<T> {
 
     LRUCache(int cacheLimit) {
         this.cacheLimit = cacheLimit
-        this.cache = new ConcurrentHashMap<String,T>(new LinkedHashMap());
+        this.cache = new ConcurrentHashMap<String,T>([:]); // new LinkedHashMap()
         this.indTracker = new ConcurrentLinkedDeque<String>();
     }
 
@@ -43,11 +46,23 @@ class LRUCache<T> {
     }
 
     String toString() {
-        cache.inspect()
+        return cache.inspect()
     }
 
-    boolean equals(Map<String,T> compareTo) {
-        return cache == compareTo
+    @Override
+    boolean equals(Object other) {
+        if (other instanceof Map) {
+            return cache == other
+        }
+        if (other instanceof LRUCache) {
+            return cache == ((LRUCache) other).cache
+        }
+        return false
+    }
+
+    @Override
+    int hashCode() {
+        return cache != null ? cache.hashCode() : 0
     }
 }
 

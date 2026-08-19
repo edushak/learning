@@ -17,7 +17,7 @@ import spock.lang.Specification
 @IgnoreIf({ !os.isWindows() && GoogleAiGeminiChatModelITSpec.keyPresent })
 class GoogleAiGeminiChatModelITSpec extends Specification {
 
-    static String model = 'gemini-2.5-flash'
+    static String model = 'gemini-3.7-flash'
     static String GOOGLE_AI_GEMINI_API_KEY = getFileText('.uncommitted')
 
     static boolean isKeyPresent() {
