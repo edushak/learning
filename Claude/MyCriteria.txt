@@ -1,11 +1,13 @@
+I am searching for stocks that are trading at bargain prices and are positioned for growth in next 6 months.
+
 I want to build a website that would search for stocks that satisfy certain criteria;
 Use following criteria:
-P/E ratio should be 15 or less;
-Price/Book ratio 2 or less;
-EPS growth (5 years historical) should be above 15%;
-Revenue (TTM) must be above $400M;
-Security price must be above 5 dollars;
-Current assets divided by current liabilities must be above 2;
-dividend growth rate (5 years average) must be positive
+    P/E ratio should be 15 or less;
+    Price/Book ratio 2 or less;
+    EPS growth (5 years historical) should be above 15%;
+    Revenue (TTM) must be above $400M;
+    Security price must be above 5 dollars;
+    Current assets divided by current liabilities must be above 2;
+    dividend growth rate (5 years average) must be positive
 
-at bargain prices and positioned for growth in next 6 months
+Allow me to adjust parameter above and rereun the scan
